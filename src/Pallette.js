@@ -7,12 +7,12 @@ class Pallette extends Component {
 
         let colorBox = this.props.colors.map(
             c => {
-                return <ColorBox background={c?.color} name={c?.name} />
+                return <ColorBox key={c?.color} background={c?.color} name={c?.name} />
             }
         );
 
-        console.log(" -- this.props.colors -- ", this.props.colors);
-        console.log(" -- colorBox -- ", colorBox);
+       // console.log(" -- this.props.colors -- ", this.props.colors);
+       // console.log(" -- colorBox -- ", colorBox);
 
         return (
             <>
