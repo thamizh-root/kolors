@@ -13,7 +13,7 @@ class Pallette extends Component {
         this.changeFormat = this.changeFormat.bind(this);
     }
 
-    changeFormat(val){
+    changeFormat(val) {
         this.setState({ format: val });
     }
 
@@ -22,8 +22,8 @@ class Pallette extends Component {
     }
 
     render() {
-        const { colors } = this.props.pallette;
-        if(colors?.length > 0){
+        const { colors, paletteName, emoji } = this.props.pallette;
+        if (colors?.length > 0) {
             console.log("yes, it's an array");
         } else {
             console.log("colors?.length", colors?.length > 0);
@@ -36,13 +36,9 @@ class Pallette extends Component {
         return (
             <>
                 <div className="Pallette">
-                    <Navbar changeLevel={this.changeLevel} handleChange={this.changeFormat} level={this.state.level}/>
-                    {/* Navbar goes here */}
-                    <div className="Pallette-colors">
-                        {/* list of color box(s) */}
-                        {colorBox}
-                    </div>
-                    {/* footer here */}
+                    <Navbar changeLevel={this.changeLevel} handleChange={this.changeFormat} level={this.state.level} />
+                    <div className="Pallette-colors"> {colorBox} </div>
+                    <footer className="Pallette-footer">{ paletteName } <span className="footer-emoji">{emoji}</span></footer>
                 </div>
             </>
         )

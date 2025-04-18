@@ -77,7 +77,7 @@ class Navbar extends Component {
           </div>
         </div>
         <div className='select-container'>
-          <Box sx={{ minWidth: 120 }}>
+          <Box sx={{ width: 150 }}>
             <FormControl fullWidth >
               <InputLabel id="demo-simple-select-label">Format</InputLabel>
               <Select
