@@ -1,6 +1,11 @@
 
 import { Component } from 'react';
 import Slider from 'rc-slider';
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
 import 'rc-slider/assets/index.css';
 import './Navbar.css';
@@ -38,11 +43,23 @@ class Navbar extends Component {
           </div>
         </div>
         <div className='select-container'>
-          <select value={this.state.format} onChange={this.handleChange}>
-            <option value='hex'>HEX - #ffffff</option>
-            <option value='rgb'>RGB - rgb(255,255,255)</option>
-            <option value='rgba'>RGBA - rgba(255,255,255, 1.0)</option>
-          </select>
+        <Box sx={{ minWidth: 120 }}>
+        <FormControl fullWidth >
+          <InputLabel id="demo-simple-select-label">Format</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={this.state.format}
+            label="Format"
+            onChange={this.handleChange}
+            style={{ height: 30 }}
+          >
+            <MenuItem value={"hex"}>HEX - #FFFF</MenuItem>
+            <MenuItem value={"rgb"}>RGB - rgb(225, 225, 225)</MenuItem>
+            <MenuItem value={"rgba"}>RGBA - rgba(225, 225, 225, 0.5)</MenuItem>
+          </Select>
+        </FormControl>
+      </Box>
         </div>
       </header>
     );
