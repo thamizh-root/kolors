@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router'; // Import Link for navigation
+import MiniPallette from './MiniPallette';
 
 class PaletteList extends Component {
   constructor(props) {
@@ -10,6 +11,7 @@ class PaletteList extends Component {
     const { palettes } = this.props; // Access the palettes array directly
     return (
       <div className="PaletteList">
+        <MiniPallette />
         <h1>My Color Palettes</h1> {/* Added a heading for context */}
         <div>
           {palettes.map((palette) => (
