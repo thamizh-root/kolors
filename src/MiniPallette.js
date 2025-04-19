@@ -3,23 +3,55 @@ import { withStyles } from '@material-ui/styles';
 
 const styles = {
     root: {
-      background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-      border: 0,
-      borderRadius: 3,
-      boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-      color: 'white',
-      height: 48,
-      padding: '0 30px',
+        backgroundColor: 'white',
+        border: '1px solid black',
+        borderRadius: '5px',
+        padding: '0.5rem',
+        position: 'relative',
+        overflow: 'hidden',
+        '&:hover': {
+            cursor: 'pointer'
+        }
     },
-  };
+    colors: {
+        backgroundColor: "#dae1e4",
+        height: "150px",
+        width: "100%",
+        borderRadius: "5px",
+        overflow: "hidden"
+      },
+    title: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        alginItem: 'center',
+        fontSize: '1rem',
+        paddingTop: '0.5rem'
+    },
+    emoji: { marginLeft: '0.5rem' },
+    miniColor: {
+        height: "25%",
+        width: "20%",
+        display: "inline-block",
+        margin: "0 auto",
+        position: "relative",
+        marginBottom: "-3.5px"
+      }
+};
 
 function MiniPallette(props) {
-    const { classes } = props;
+    const { classes, paletteName, emoji, colors } = props;
+    const miniColorBoxes = colors.map(color => (
+      <div
+        className={classes.miniColor}
+        style={{ backgroundColor: color.color }}
+        key={color.name}
+      />
+    ));
     return (
-        <>
-            <h1>Hello World!</h1>
-            <button className={classes.root}>Higher-order component</button>
-        </>
+        <div className={classes.root}>
+            <div className={classes.colors}>{miniColorBoxes}</div>
+            <h5 className={classes.title}> {paletteName}<span>{emoji}</span></h5>
+        </div>
     );
 }
 
