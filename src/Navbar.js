@@ -6,6 +6,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import { Link } from 'react-router';
 
 import Button from '@mui/material/Button';
 import Snackbar from '@mui/material/Snackbar';
@@ -28,7 +29,7 @@ class Navbar extends Component {
 
   handleChange(event) {
     this.setState({ format: event.target.value, open: true });
-    this.props.handleChange(event.target.value);
+    this.props.changeFormat(event.target.value);
   }
 
   handleClick() { // we handled it in handleChange
@@ -62,7 +63,7 @@ class Navbar extends Component {
     return (
       <header className='Navbar'>
         <div className='logo'>
-          <a href='#'>reactcolorpicker</a>
+        <Link to="/">KolorPicker</Link>
         </div>
         <div className='slider-container'>
           <span>Level: {level}</span>

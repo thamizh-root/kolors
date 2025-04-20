@@ -1,15 +1,18 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router'; // Import Link for navigation
+import React from 'react';
+import { useNavigate } from 'react-router'; 
 import MiniPallette from './MiniPallette';
-import { withStyles } from "@material-ui/styles";
+import { withStyles } from '@material-ui/styles';
+import bg from "./bg.svg";
 
 const styles = {
   root: {
     backgroundColor: "blue",
+    backgroundImage: `url(${bg})`,
     height: "100vh",
     display: "flex",
     alignItems: "flex-start",
-    justifyContent: "center"
+    justifyContent: "center",
+    overflow: "scroll"
   },
   container: {
     width: "50%",
@@ -32,28 +35,31 @@ const styles = {
   }
 };
 
-class PaletteList extends Component {
-  constructor(props) {
-    super(props);
-  }
+function PaletteList({ palettes, classes }) {
+  const navigate = useNavigate();
 
-  render() {
-    const { palettes, classes } = this.props; // Access the palettes array directly
-    return (
-      <div className={classes.root}>
-        <div className={classes.container}>
-          <nav className={classes.nav}>
-            <h1>React Colors</h1>
-          </nav>
-          <div className={classes.palettes}>
-            {palettes.map(palette => (
-              <MiniPallette {...palette} />
-            ))}
-          </div>
+  const goToPalette = (id) => {
+    navigate(`/pallette/${id}`);
+  };
+
+  return (
+    <div className={classes.root}>
+      <div className={classes.container}>
+        <nav className={classes.nav}>
+          <h1>React Colors</h1>
+        </nav>
+        <div className={classes.palettes}>
+          {palettes.map(palette => (
+            <MiniPallette
+              {...palette}
+              key={palette.id}
+              handleClick={() => goToPalette(palette.id)}
+            />
+          ))}
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default withStyles(styles)(PaletteList);
