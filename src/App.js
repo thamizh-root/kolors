@@ -15,7 +15,12 @@ function App() {
         <Route path="/" element={<PalletteList palettes={seedColors} />} />
         <Route path="/pallette/:id" element={<Pallette />} />
       </Routes>
-      {/* <Pallette pallette={generatePalette(seedColors[4])} /> */}
+      {/* <PalletteList palettes={seedColors} /> */}
+      {/* <div class="container">
+       <div class="d-one"></div>
+       <div class="d-two"></div>
+       <div class="d-three"></div>
+    </div> */}
     </div>
   );
 }

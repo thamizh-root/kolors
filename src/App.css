@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 5vh 1fr 5vh; /* Define three rows with specified heights */
+}
+
+.d-one{
+  background-color: lightblue;
+}
+
+.d-two{
+  background-color: yellow;
+}
+
+.d-three{
+  background-color: lightgreen;
+}
