@@ -62,10 +62,14 @@ class Navbar extends Component {
     const { level, changeLevel } = this.props;
     return (
       <header className='Navbar'>
+
+
         <div className='logo'>
         <Link to="/">KolorPicker</Link>
         </div>
-        <div className='slider-container'>
+
+
+        {/* <div className='slider-container'>
           <span>Level: {level}</span>
           <div className='slider'>
             <Slider
@@ -76,7 +80,8 @@ class Navbar extends Component {
               onAfterChange={changeLevel}
             />
           </div>
-        </div>
+        </div> */}
+
         <div className='select-container'>
           <Box sx={{ width: 150 }}>
             <FormControl fullWidth >
@@ -96,6 +101,7 @@ class Navbar extends Component {
             </FormControl>
           </Box>
         </div>
+
 
         <div>
           {/* // <Button onClick={this.handleClick}>Open Snackbar</Button> */}
