@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import './App.css';
 
 function App() {
-  console.log(" - generateColors - ", generatePalette(seedColors[4]));
+  // console.log(" - generateColors - ", generatePalette(seedColors[4]));
   return (
     <div>
       <Routes>

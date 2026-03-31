@@ -69,7 +69,7 @@ class Navbar extends Component {
         </div>
 
 
-        {/* <div className='slider-container'>
+        <div className='slider-container'>
           <span>Level: {level}</span>
           <div className='slider'>
             <Slider
@@ -80,7 +80,7 @@ class Navbar extends Component {
               onAfterChange={changeLevel}
             />
           </div>
-        </div> */}
+        </div>
 
         <div className='select-container'>
           <Box sx={{ width: 150 }}>

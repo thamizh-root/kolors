@@ -17,8 +17,8 @@ code {
     monospace;
 }
 
-* { outline: 2px solid red !important; }
+/* * { outline: 2px solid red !important; } */
 
-/* *, *::before, *::after {
+*, *::before, *::after {
   box-sizing: border-box;
-} */
+}
