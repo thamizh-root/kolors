@@ -1,9 +1,9 @@
 import React, { useState, useCallback } from 'react';
 import { useParams } from 'react-router';
-import ColorBox from './ColorBox';
-import Navbar from './Navbar';
-import seedColors from './seedColors'; // Assuming seedColors is in the parent directory
-import { generatePalette } from './colorHelper'; // Assuming colorHelper is in the parent directory
+import ColorBox from '../ColorBox/ColorBox';
+import Navbar from '../Navbar/Navbar';
+import seedColors from '../../helper/seedColors'; // Assuming seedColors is in the parent directory
+import { generatePalette } from '../../helper/colorHelper'; // Assuming colorHelper is in the parent directory
 import './Pallette.css';
 
 function Pallette() {

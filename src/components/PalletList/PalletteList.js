@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
-import MiniPallette from './MiniPallette';
+import MiniPallette from '../MiniPallette/MiniPallette';
 import { withStyles } from '@material-ui/styles';
-import bg from "./bg.svg";
+import bg from "../../assets/bg.svg";
 
 const styles = {
   root: {

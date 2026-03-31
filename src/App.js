@@ -1,8 +1,7 @@
-import logo from './logo.svg';
-import Pallette from './Pallette';
-import seedColors from './seedColors';
-import PalletteList from './PalletteList';
-import { generatePalette } from './colorHelper';
+import Pallette from './components/Pallette/Pallette';
+import seedColors from './helper/seedColors';
+import PalletteList from './components/PalletList/PalletteList';
+import { generatePalette } from './helper/colorHelper';
 import { BrowserRouter, Routes, Route } from "react-router";
 
 import './App.css';
@@ -15,12 +14,6 @@ function App() {
         <Route path="/" element={<PalletteList palettes={seedColors} />} />
         <Route path="/pallette/:id" element={<Pallette />} />
       </Routes>
-      {/* <PalletteList palettes={seedColors} /> */}
-      {/* <div class="container">
-       <div class="d-one"></div>
-       <div class="d-two"></div>
-       <div class="d-three"></div>
-    </div> */}
     </div>
   );
 }
